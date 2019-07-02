@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% block title %}One Traveler | Relatos{% endblock %}
+
+{% block page_content %}
+<div class="row">
+    <div class="card-body p-5">
+        <B><h1 class="font-weight-light">Relatos de Viagem</h1></B>
+        <p class="lead">
+        <div class="row">
+  
+    {% for place in places %}
+    <div class="container">
+      <div class="row text-center text-lg-left">
+      </div>
+      <div class="card-deck" style="height: 600px; padding: 10px; margin: 10px">
+          <div class="card">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/') }}{{place.image_name}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{ place.title }}</h5>
+              <p class="card-text">{{ place.description }}</p> 
+            </div>
+            <div class="card-footer">
+                <p>
+                  <a class="btn btn-primary" href="{{ url_for('main.relato', id=place.id) }}">Leia mais</a>
+                </p>
+            </div>
+          </div>
+          <!-- <div class="card">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/img27.jpeg') }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Laguna 69</h5>
+              <p class="card-text">Localizada no Parque Nacional Huascarán, a lagoa 69  é incrível: sua água de um é um verde impressionante e seus picos nevados como plano de fundo formam uma das vistas mais bonitas da América do Sul.</p>
+            </div>
+            <div class="card-footer">
+                <p>
+                  <a class="btn btn-primary" href="#">Leia mais</a>
+                </p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/img29.jpeg') }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Salar de Uyuni</h5>
+              <p class="card-text">O Salar de Uyuni, o maior mar de sal do mundo, é uma das grandes maravilhas da natureza da Bolívia. Localizado a cerca de 3500 metros de altitude, é um grande e importante pólo turístico para região.</p>
+            </div>
+            <div class="card-footer">
+                <p>
+                  <a class="btn btn-primary" href="#">Leia mais</a>
+                </p>
+            </div>
+          </div> -->
+        </div>
+    {% endfor %}
+   <!-- <div class="container">
+      <div class="row text-center text-lg-left">
+      </div>
+      <div class="card-deck" style="height: 600px; padding: 10px; margin: 10px">
+          <div class="card">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/img30.jpeg') }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Cemitério de Trens</h5>
+              <p class="card-text">O Cemitério de Trens faz parte de praticamente todos os tours que passam pelo Salar de Uyuni boliviano. Nessa parada temos um tempo bem legal para explorar o cemitério e tirar todas as fotos imagináveis.</p>
+            </div>
+            <div class="card-footer">
+                <p>
+                  <a class="btn btn-primary" href="#">Leia mais</a>
+                </p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/img31.jpeg') }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Vulcão Lascar</h5>
+              <p class="card-text">A subia ao Vulcão Lascar é considerada de nível fácil. Com seus incríveis 5.600 metros de altitude, o Lascar é considerado o vulcão mais ativo do norte do Chile e pode ser visto de diversos pontos do Atacama.</p>
+            </div>
+            <div class="card-footer">
+                <p>
+                  <a class="btn btn-primary" href="#">Leia mais</a>
+                </p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/img32.jpeg') }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Deserto do Atacama</h5>
+              <p class="card-text">No norte do Chile temos o deserto mais arido do mundo e lugar que guarda uma série de belezas naturais capazes de deixar até os turistams mais exigentes de queixo caido, o lugar é incivelmente lindo e singular.</p>
+            </div>
+            <div class="card-footer">
+                <p>
+                  <a class="btn btn-primary" href="#">Leia mais</a>
+                </p>
+            </div>
+          </div>
+        </div>
+
+      <div class="container">
+      <div class="row text-center text-lg-left">
+      </div>
+      <div class="card-deck" style="height: 600px; padding: 10px; margin: 10px">
+          <div class="card">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/img20.jpeg') }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Vale Sagrado</h5>
+              <p class="card-text">Se você tem interesse na história da antiga civilização inca e quer dar mais alguns suspiros com as paisagens incríveis do Peru, você com certeza não pode deixar esse lugar de fora do seu roteiro de viagem ao Peru.</p>
+            </div>
+            <div class="card-footer">
+                <p>
+                  <a class="btn btn-primary" href="#">Leia mais</a>
+                </p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/img21.jpeg') }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Puno</h5>
+              <p class="card-text">Puno é a principal cidade base pra quem quer visitar o lago navegável mais alto do mundo, o Titicaca. E é exatamente ali, nas águas calmas do Titicaca que é possível vivenciar a verdadeira cultura peruana.</p>
+            </div>
+            <div class="card-footer">
+                <p>
+                  <a class="btn btn-primary" href="#">Leia mais</a>
+                </p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/img22.jpeg') }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Adventure Tuor</h5>
+              <p class="card-text">Peru é um conjunto de litoral desértico quente, uma serra imponente e uma floresta exuberante, perfeito para praticar sandboard nas dunas, canoagem nos rios ou trekking no Caminho Inca, e muitos outros.</p>
+            </div>
+            <div class="card-footer">
+                <p>
+                  <a class="btn btn-primary" href="#">Leia mais</a>
+                </p>
+            </div>
+          </div>
+        </div>
+
+
+    <div class="container">
+      <div class="row text-center text-lg-left">
+      </div>
+      <div class="card-deck" style="height: 600px; padding: 10px; margin: 10px">
+          <div class="card">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/img23.jpeg') }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Arequipa</h5>
+              <p class="card-text">Arequipa é a cidade base para visitar o Canyon del Colca, um dos mais profundos do mundo, e guarda Juanita, a múmia mais bem preservadas do Peru, e o Mosteiro de Santa Catalina, um dos mais belos do país.</p>
+            </div>
+            <div class="card-footer">
+                <p>
+                  <a class="btn btn-primary" href="#">Leia mais</a>
+                </p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/img24.jpeg') }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Salinas de Maras</h5>
+              <p class="card-text">As salinas de Maras são um espetáculo impressionante. O espetáculo não tem nada a ver com a civilização inca, mas com o povo peruano, que conseguiu produzir sal mesmo a muitos quilômetros do mar.</p>
+            </div>
+            <div class="card-footer">
+                <p>
+                  <a class="btn btn-primary" href="#">Leia mais</a>
+                </p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/img33.jpeg') }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Vulcão Misti</h5>
+              <p class="card-text">Esforços para subir o grande vulcão são recompensados pela bela vista cúpula, com as montanhas, picos nevados, vulcões e a cidade branca. Mais impressionante, irá apreciar a cratera do vulcão!</p>
+            </div>
+            <div class="card-footer">
+                <p>
+                  <a class="btn btn-primary" href="#">Leia mais</a>
+                </p>
+            </div>
+          </div>-->
+        </div>
+        </div>
+
+{% endblock %}

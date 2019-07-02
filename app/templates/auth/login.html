@@ -1,0 +1,44 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}One Traveler | Login{% endblock %}
+
+
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('main.index') }}">One Traveler | Login</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+    </div>
+  </nav>
+
+  {% for message in get_flashed_messages() %}
+  <div class="alert alert-warning">
+      {{ message }}
+  </div>
+{% endfor %}
+
+
+  <div class="row">
+      <div class="col-5">
+      </div>
+      <div class="col-2">
+                  <div class="text-center">
+                    <img src="{{ url_for('static', filename='img/favicon.ico') }}" class="rounded" alt="Logo">
+                  </div>
+
+                  {{ wtf.quick_form(form) }} <hr>
+
+                  <a href="{{ url_for('auth.register') }}">
+                  <button class="btn btn-lg btn-primary btn-block" >Crie sua conta</button></a>
+      </div>
+      <div class="col-5">
+      </div>
+  </div>
+</div>
+
+{% endblock %}

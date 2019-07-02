@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block title %}One Traveler | Galeria{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Galeria</h1>
+    <hr class="mt-2 mb-5">
+    <div class="row text-center text-lg-left">
+      {% for place in places %}
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{{url_for('.relatos', id=place.id)}}" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/') }}{{place.image_name}}" alt="">
+              <p class="text-center">{{place.title}}</p>
+        </a>
+      </div>
+      {% endfor %}
+      <!-- <div class="col-lg-3 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img44.jpeg') }}" alt="">
+              <p class="text-center">Machu Picchu</p>
+            </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img45.jpeg') }}" alt="">
+              <p class="text-center">Laguna 69</p>
+            </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img33.jpeg') }}" alt="">
+              <p class="text-center">Vulcão Misti</p>
+            </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img32.jpeg') }}" alt="">
+              <p class="text-center">Deserto do Atacama</p>
+            </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img31.jpeg') }}" alt="">
+              <p class="text-center">Deserto do Atacama</p>
+            </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img30.jpeg') }}" alt="">
+              <p class="text-center">Cemitério de Trens</p>
+            </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img29.jpeg') }}" alt="">
+              <p class="text-center">Salar de Uyuni</p>
+            </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img28.jpeg') }}" alt="">
+              <p class="text-center">Salar de Uyuni</p>
+            </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img27.jpeg') }}" alt="">
+              <p class="text-center">Laguna 69</p>
+            </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img22.jpeg') }}" alt="">
+              <p class="text-center">Salar de Uyuni</p>
+            </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img24.jpeg') }}" alt="">
+              <p class="text-center">Salinas de Tara</p>
+            </a>
+      </div>
+       
+      <div class="container py-4">
+      <div class="row d-md-block">
+          <div class="col-md-6 float-md-left">
+              <a href="“link”" class="d-block h-100 mb-4">
+                  <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img37.jpeg') }}" alt="">
+                  <p class="text-center">Cordilheira Branca</p>
+              </a>
+          </div>
+  
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 pb-1 float-md-left">
+              <a href="“link”" class="d-block mb-4 h-100">
+                  <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img21.jpeg') }}" alt="">
+                  <p class="text-center">Puno</p>
+              </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 pb-1 float-md-left">
+              <a href="“link”" class="d-block mb-4 h-100">
+                  <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img23.jpeg') }}" alt="">
+                  <p class="text-center">Arequipa</p>
+              </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 pb-1 float-md-left">
+              <a href="“link”" class="d-block mb-4 h-100">
+                  <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img78.jpeg') }}" alt="">
+                  <p class="text-center">Huaraz</p>
+              </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 pb-1 float-md-left">
+              <a href="“link”" class="d-block mb-4 h-100">
+                  <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img20.jpeg') }}" alt="">
+                  <p class="text-center">Vale Sagrado</p>
+              </a>
+          </div>-->
+      </div>
+{% endblock %}

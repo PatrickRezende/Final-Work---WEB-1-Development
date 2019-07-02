@@ -1,0 +1,217 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+    Meu projeto
+{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+{% endblock %}
+
+
+{% block scripts %}
+    {{ super() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+{% endblock %}
+
+
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('main.index') }}">One Traveler | Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active" action="main.html">
+            <a class="nav-link" href="{{ url_for('main.index') }}">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('main.sobre') }}">Sobre Nós</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('main.dicas') }}">Dicas de Viagem</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" href="{{ url_for('main.galeria') }}">Galeria</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('main.relatos') }}">Relatos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('main.mp') }}">Macchu Picchu</a>
+          </li>
+        </ul>
+      </div>
+
+<!--if usuário não logado, mostrar isso:-->
+{% if not current_user.is_authenticated %}
+        <div class="col-md-1" action="{{ url_for('auth.login') }}">
+            <a href="{{ url_for('auth.login') }}">
+                <button type="button" class="btn btn-success" >
+                Login
+                </button>
+            </a>
+        </div>
+        <div class="col-md-1">
+        <a href="{{ url_for('auth.register') }}">
+            <button type="button" class="btn btn-success" >
+              Cria conta
+            </button>
+        </a>
+        </div>
+
+<!--#if usuário logado, mostrar isso:   -->
+{% else %}    
+        <div class="col-md-1">
+        <a href="{{ url_for('auth.logout') }}">
+                <button type="button" class="btn btn-success" >
+                  Logout
+                </button>
+        </a>
+        </div>
+{% endif %}
+    </div>
+  </nav>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-warning">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <div class="card border-0 shadow my-5">        
+        
+            {% if Home %}
+                &nbsp;
+                <h1 align="center">
+                    One Traveler: <small class="text-muted" >Se junte a nós nesta viagem!</small>
+                </h1>    
+            {% endif %}
+
+        
+            {% block carrosel %}      
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="carousel slide" id="carousel-9979">
+                            <ol class="carousel-indicators">
+                                <li data-slide-to="0" data-target="#carousel-9979"> </li>
+                                <li data-slide-to="1" data-target="#carousel-9979"> </li>
+                                <li data-slide-to="2" data-target="#carousel-9979"> </li>
+                                <li data-slide-to="3" data-target="#carousel-9979"> </li>
+                                <li data-slide-to="4" data-target="#carousel-9979" class="active">  </li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" href="mp.html" alt="Carousel Bootstrap First" src="{{ url_for('static', filename='img/img51.jpeg') }}" />
+                                    <div class="carousel-caption">
+                                    <h4 href="mp.html">Machu Picchu</h4>
+                                    <p>
+                                        Machu Picchu, a misteriosa cidade dos Incas, mistura o real e o imaginário em doses perfeitas de natureza, cultura e misticismo.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" alt="Carousel Bootstrap Second" src="{{ url_for('static', filename='img/img60.jpeg') }}" />
+                                <div class="carousel-caption">
+                                    <h4>Huacachina</h4>
+                                    <p>
+                                        São cerca de 100 habitantes e milhares de turistas por ano. Um dos orgulhos nacionais peruanos é o famoso oásis da América! 
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" alt="Carousel Bootstrap Second" src="{{ url_for('static', filename='img/img52.jpeg') }}" />
+                                <div class="carousel-caption">
+                                    <h4>Huaraz</h4>
+                                    <p>
+                                        Huaraz é a cidade base para se explorar a Cordillera Blanca e o Parque Nacional Huascarán, com seus inúmeros picos nevados e lagunas azul turquesa. 
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" alt="Carousel Bootstrap Second" src="{{ url_for('static', filename='img/img59.jpeg') }}" />
+                                <div class="carousel-caption">
+                                    <h4>Arequipa</h4>
+                                    <p>
+                                        Are0quipa  guarda até hoje cenários e histórias preciosas como a Juanita, a múmia mais bem preservadas do Peru, e o Mosteiro de Santa Catalina, um dos mais bem conservados conventos do país 
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" alt="Carousel Bootstrap Third" src="{{ url_for('static', filename='img/img55.jpeg') }}" />
+                                <div class="carousel-caption">
+                                    <h4>Atacama</h4>
+                                    <p>
+                                        O deserto mais seco do mundo é também o mais espetacular de todos. O Atacama tem vulcão, salares, lagoas, gêiseres, formações rochosas e um céu carregado de estrelas como você nunca viu.
+                                    </p>
+                                </div>
+                            </div>
+                            </div> 
+                            <a class="carousel-control-prev" href="#carousel-9979" data-slide="prev"><span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a class="carousel-control-next" href="#carousel-9979" data-slide="next">
+                                <span class="carousel-control-next-icon"></span> 
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        
+            {% block page_content %}{% endblock %}
+
+            {% block rodape %}
+                <hr color="black">
+                <p class="lead"></p>
+      <div style="height: 600px; padding: 30px; margin: 10px">
+
+        <div class="row" >
+          <div class="col-md-8">
+            <h3>
+              Entre em contato conosco:
+            </h3>
+            <form role="form">
+              <div class="form-group">
+                 
+                <label for="exampleInputEmail1">
+                  Seu Email
+                </label>
+                <input type="email" class="form-control" id="exampleInputEmail1" />
+              </div>
+              <div class="form-group">
+                 
+                <label for="exampleInputEmail1">
+                  Assunto
+                </label>
+                <input type="email" class="form-control" id="exampleInputEmail1" />
+              </div>
+              <div class="form-group">
+                 
+                <label for="exampleInputPassword1">
+                  Mensagem
+                </label>
+                <input type="text" style= "height: 250px" class="form-control" id="exampleInputPassword1" />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Enviar
+              </button>
+            </form>
+          </div>
+          <div class="col-md-4">
+            <img alt="Bootstrap Image Preview" src="{{ url_for('static', filename='img/img13.jpeg') }}" class="rounded-circle" /> 
+            <address>
+               <strong>Patrick Luiz Rezende</strong><br />Criador de Conteúdo do "One Traveler"<br />Joinville, SC<br /> <abbr title="Phone">Whats:</abbr> (47)99755-5182
+            </address>
+        {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+
+
+

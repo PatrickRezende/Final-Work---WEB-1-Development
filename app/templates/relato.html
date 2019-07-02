@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}One Traveler | {{story.title}}{% endblock %}
+
+{% block page_content %}
+
+<div class="container">
+<div class="card border-0 shadow my-5">
+<div class="card-body p-5">
+  <B><h1 class="font-weight-light text-center text-lg-left mt-4 mb-0"> {{story.title}} </h1></B>
+  <p class="lead">
+        <p>
+            {% autoescape false %}
+
+            {{story.content}}  
+            {% endautoescape %}
+
+        <p>
+    <div class="card bg-dark text-white">
+      <img class="card-img" src="{{ url_for('static', filename='img/') }}{{story.image_name}}" alt="Card image">
+      <div class="card-img-overlay">
+        <h5 class="card-title">{{story.title}}</h5>
+        <p class="card-text"></p>
+        <p class="card-text"></p>
+      </div>
+    </div>
+  <br>
+</div>
+
+{% endblock %}

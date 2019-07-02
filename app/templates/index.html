@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}One Traveler | Home{% endblock %}
+
+<!-- Page Content -->
+{% block page_content %}
+
+  <div class="card border-0 shadow my-5">
+        &nbsp;
+        <h1 align="center">
+          One Traveler: <small class="text-muted" >Se junte a nós nesta viagem!</small>
+        </h1>
+
+    <div class="card-body p-5">
+        <B><h1 class="font-weight-light">Quem somos nós</h1></B>
+        <p class="lead">
+            <p>
+              O Blog One Traveler tem como principal objetivo dar dicas e ajudar você a viajar mais, aqui daremos dicas, mostraremos como se hospedar de forma barata (ou até mesmo gratuita, rs), transportes econômicos e diversas formas para você aproveitar ao máximo sua viagem dentro do seu tempo e orçamento. No momento estou me preparando para um intercâmio voluntário no Peru, no qual vou passar dois meses neste país Andino ensinando inglês para crianças de um bairro carente da cidade. Este é um dos meus maiores sonhos desde pequeno, ser voluntário em um país estrangeiro, e estou planejando muitas viagens e atividades de aventura (são as minhas favoritas hehe) pelo Peru, Bolívia e Chile, e planejo compartilhar tudo com vocês! Todas as experiências, perrengues e micos, tudo incentivar e ajuda você a viajar mais. Enfim, espero que goste do site e consiga tirar coisas produtivas daqui. Se você possui alguma experiência de viagem que gostaria de compartilhar aqui no Blog, ou tenha qualquer dúvida ou sugestão, pode entrar em contato comigo pelo espaço de contato no final da página.
+            </p>
+            <p>
+              <a class="btn" href="{{ url_for('main.sobre') }}">Leia mais »</a>
+            </p>
+            <dl>
+              <dt><h4><b>
+                Experiências:
+              </dt></h4></b>
+              <dd>
+                Aqui você tem a sua disposição diversos relatos de viagens de pessoas das mais diferentes idades e estados financeiros que nos mandaram a sua experiência de sair do conforto e segurança de suas casas para conhecer novos lugares, e tiveram algumas das experiências mais incriveis de suas vidas.  <br><br>
+              </dd>
+              <dt><h4><b>
+                Roteiros Completos:
+              </dt></h4></b>
+              <dd>     
+                Disponibilizamos aqui diversos roteiros completos de viagens, para os mais variados gostos e bolsos, tudo para facilitar a organização da sua viagem.<br><br>
+              </dd>
+
+              <dt><h4><b>
+                Dicas de Viagem:
+              </dt></h4></b>
+              <dd>
+                No site colocamos a sua disposição diversas dicas e sugestões para a sua viagem, tudo para agilizar, ajudar, economizar e deixar mais segura a sua viagem<br><br>
+              </dd>
+              <dt><h4><b>
+                Informações Gerais:
+              </dt></h4></b>
+              <dd>
+                Se você está procurando destinos, voos baratos, os melhores locais para se hospedar, descontos ou dicas para a sua viagem, você está no lugar certo! Aqui no site disponibilizamos para você todas as informações necessárias para que a sua viagem possa se tornar a melhor experiência da sua vida, tudo isso com segurança, comodidade e pelo melhor preço possível, seja mais um traveler, embarque conosco nesta viagem!<br><br>
+              </dd>
+            </dl>
+    </div>
+
+		<div class="container">
+          	
+		  <h1 class="font-weight-light text-center text-lg-left mt-8 mb-6"><a href="{{ url_for('main.dicas') }}">Dicas de Viagem</h1></a>
+		  <hr class="mt-2 mb-5">
+			<div class="card">
+			  <div class="card-body">
+			  	<a href="{{ url_for('main.dicas') }}">
+			    <h5 class="card-title">#5 Dicas de Planejamento de Viagem - Peru</h5></a>
+			    <p class="card-text">Organizar uma viagem por conta própria não é fácil. Organizar uma viagem para o Peru, então, exige um pouco mais de dedicação, pois são muitas variáveis: moeda, soroche, estradas ruins, tickets e boletos, trens, malas, guias, passagens, etc. Pensando nisso e lembrando dos perrengues que encontramos ao planejar cada um de nossos itinerário pelo país, listei aqui as 5 principais dicas para montar uma viagem perfeita para o Peru.</p>
+			    <p class="card-text"><small class="text-muted">Last updated 1 day ago</small></p>
+			  </div>
+			  <a href="{{ url_for('main.dicas') }}">
+			  <img class="card-img-bottom" src="{{ url_for('static', filename='img/img53.jpeg') }}" alt="Card image cap">
+			  </a>
+			</div>
+			<br>
+
+          <div class="container">
+          	
+		  <h1 class="font-weight-light text-center text-lg-left mt-8 mb-6"><a href="{{ url_for('main.galeria') }}">Galeria</h1></a>
+		  <hr class="mt-2 mb-5">
+		  <div class="row text-center text-lg-left">
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+                <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img42.jpeg') }}" alt="">
+                <p class="text-center">Montanha das 7 Cores</p>
+              </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+                <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img44.jpeg') }}" alt="">
+                <p class="text-center">Machu Picchu</p>
+              </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+                <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img45.jpeg') }}" alt="">
+                <p class="text-center">Laguna 69</p>
+              </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+                <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='img/img33.jpeg') }}" alt="">
+                <p class="text-center">Vulcão Misti</p>
+              </a>
+        </div>
+
+
+          <div class="container">
+
+		  <h1 class="font-weight-light text-center text-lg-left mt-8 mb-6"><a href="{{ url_for('main.relatos') }}"  >Relatos de Viagem</h1></a>
+		  <hr class="mt-2 mb-5">
+		  <div class="row text-center text-lg-left">
+		  </div>
+          <div class="card-deck" style="height: 600px; padding: 10px; margin: 10px">
+            <div class="card">
+              <img class="card-img-top" src="{{ url_for('static', filename='img/img25.jpeg') }}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Machu Picchu</h5>
+                <p class="card-text">Machu Picchu é simplesmente a atração número um do Peru. Sua complexa e misteriosa arquitetura encastelada, cravada em um cenário montanhoso dramático, vem atraindo turistas de todo o mundo.</p>
+              </div>
+              <div class="card-footer">
+                  <p>
+                    <a class="btn btn-primary" href="{{ url_for('main.mp') }}">Leia mais</a>
+                  </p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="{{ url_for('static', filename='img/img27.jpeg') }}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Laguna 69</h5>
+                <p class="card-text">Localizada no Parque Nacional Huascarán, a lagoa 69  é incrível: sua água de um é um verde impressionante e seus picos nevados como plano de fundo formam uma das vistas mais bonitas da América do Sul.</p>
+              </div>
+              <div class="card-footer">
+                  <p>
+                    <a class="btn btn-primary" href="#">Leia mais</a>
+                  </p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="{{ url_for('static', filename='img/img29.jpeg') }}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Salar de Uyuni</h5>
+                <p class="card-text">O Salar de Uyuni, o maior mar de sal do mundo, é uma das grandes maravilhas da natureza da Bolívia. Localizado a cerca de 3500 metros de altitude, é um grande e importante pólo turístico para região.</p>
+              </div>
+              <div class="card-footer">
+                  <p>
+                    <a class="btn btn-primary" href="#">Leia mais</a>
+                  </p>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    {% endblock %}
